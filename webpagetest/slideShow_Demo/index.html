@@ -1,0 +1,211 @@
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    
+    .mySlides {display:none;}
+
+    form {
+      background-color: magenta; 
+      padding: 20px;
+    }
+    input {
+      display: block;
+    }
+    #contact {
+      display: inline;
+    }
+
+</style>
+<body>
+
+<h2 class="w3-center">Manual Slideshow</h2>
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="images/image_1.jpg" style="width:100%">
+  <img class="mySlides" src="images/image_2.jpg" style="width:100%">
+  <img class="mySlides" src="images/image_3.jpg" style="width:100%">
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<!--
+
+<form>
+
+      <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name...">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname">
+
+        <label for="contact">How did you hear about us?</label>
+        <input type="radio" id="contact" name="email">Email
+        <input type="radio" id="contact" name="email">Friend
+        <input type="radio" id="contact" name="email">Google
+
+        <label for="country">Country</label>
+        <select id="country">
+          <option value="australia">Australia </option>
+          <option value="ecuador">Ecuador</option>
+          <option value="ireland">Ireland</option>
+        </select>
+
+        <input type="submit">
+
+
+</form>
+
+-->
+<script>
+    
+/*
+
+//First step//
+
+var theId = document.getElementById("firstImage"); //make sure to replace the class declaration in html above with an id called "theId"
+    
+theId.style.display = block;
+*/
+ 
+    
+/*
+//Second step//
+
+//Go back to class declaration in html and make the var more generic
+   
+var x = document.getElementsByClassName("mySlides");//explain how an array variable works
+
+x[0].style.display = "block";//explain how arrays can be written as their elements
+*/   
+ 
+    
+/*
+//Third step//
+
+var slideIndex = 0;
+    
+var x = document.getElementsByClassName("mySlides");
+
+x[slideIndex].style.display = "block";
+*/
+
+
+/*
+    
+//Fourth step
+
+var slideIndex = 0;
+    
+showDivs();
+    
+function showDivs(){ 
+    var x = document.getElementsByClassName("mySlides");
+    x[slideIndex].style.display = "block";
+}
+*/
+    
+/*
+//Fifth step
+    
+var slideIndex = 0;
+    
+showDivs();
+    
+function showDivs(){ 
+    var x = document.getElementsByClassName("mySlides");
+    
+    for (i=0; i<x.length; i++){
+        x[i].style.display = "block";//then switch to none
+    }
+        
+    x[slideIndex].style.display = "block";
+}  
+*/
+
+/*
+//Sixth step
+var slideIndex = 0;
+    
+showDivs(slideIndex);
+    
+function plusDivs(n) {
+    slideIndex = slideIndex+n;
+    showDivs(slideIndex);
+}
+        
+function showDivs(theIndex){ //add var sent in function here
+    var x = document.getElementsByClassName("mySlides");
+    
+    for (i=0; i<x.length; i++){
+        x[i].style.display = "none";
+    }
+        
+    x[theIndex].style.display = "block";
+}   
+*/
+    
+
+//Seventh step
+var slideIndex = 0;
+    
+showDivs(slideIndex);
+    
+function plusDivs(n) {
+    slideIndex = slideIndex+n;
+    showDivs(slideIndex);
+}
+        
+function showDivs(theIndex){ 
+    
+    var x = document.getElementsByClassName("mySlides");
+
+    var highestIndex = x.length - 1; //since we start at zero the highest index is one less than the number of items
+    
+    if (theIndex > highestIndex) {slideIndex = 0;}//if we've added beyond the number of indices, then we start back at zero
+  
+    if (theIndex < 0) {slideIndex = highestIndex;}//if we've subtracted below zero, then we start at the top
+    
+    for (i=0; i<x.length; i++){
+        x[i].style.display = "none";
+    }
+        
+    x[slideIndex].style.display = "block";
+}
+    
+/*
+//Original
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  
+  if (n > x.length) {slideIndex = 1}    
+  
+  if (n < 1) {slideIndex = x.length}
+  
+
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+
+  x[slideIndex].style.display = "block";  
+
+  }
+ 
+}
+*/
+    
+</script>
+
+</body>
+</html>
